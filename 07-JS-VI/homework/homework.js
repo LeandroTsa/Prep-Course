@@ -58,9 +58,13 @@ function map(array, cb) {
   }
  var nuevoarray = []
  for(let i =0;i<array.length;i++){
-   nuevoarray.push(cb)
+   nuevoarray.push(cb(array[i]))
+   nuevoarray[i] = cb(array[i])
  }
-
+ var nueevoarray = array.map(function (elemento){
+   return cb(elemento)
+ })
+return nueevoarray;
 }
 
 function filter(array) {
